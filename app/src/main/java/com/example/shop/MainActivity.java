@@ -1,5 +1,6 @@
 package com.example.shop;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -42,7 +43,14 @@ public class MainActivity extends AppCompatActivity {
             passwarn.setText("");
             namewarnpic.setVisibility(View.VISIBLE);
         };
-
+        if(namew.length()>=6 && passw.length() >=8)
+        {
+            new AlertDialog.Builder(MainActivity.this)
+                    .setTitle("Great")
+                    .setMessage("Welcome!")
+                    .setPositiveButton("OK",null)
+                    .show();
+        }
 
 
 
