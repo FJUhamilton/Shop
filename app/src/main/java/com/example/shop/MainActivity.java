@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        name = findViewById(R.id.namewarn);
+        name = findViewById(R.id.name);
         namewarn = findViewById(R.id.namewarn);
         password = findViewById(R.id.password);
         passwarn = findViewById(R.id.passwarn);
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         namewarnpic = findViewById(R.id.namewarnpic);
      }
     public void check (View view){
-        String namew = namewarn.getText().toString();
+        String namew = name.getText().toString();
         String passw = password.getText().toString() ;
         if(passw.length() < 8){
             passwarn.setText("Password too SHORT!");
@@ -37,10 +37,10 @@ public class MainActivity extends AppCompatActivity {
             passwarnpic.setVisibility(View.VISIBLE);
         };
         if(namew.length() < 6){
-            passwarn.setText("Name too SHORT!");
+            namewarn.setText("Name too SHORT!");
             namewarnpic.setVisibility(View.INVISIBLE);
         }else{
-            passwarn.setText("");
+            namewarn.setText("");
             namewarnpic.setVisibility(View.VISIBLE);
         };
         if(namew.length()>=6 && passw.length() >=8)
